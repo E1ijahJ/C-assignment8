@@ -13,4 +13,9 @@ private class Person{
     Birthday=birthday;
   }
 }
+private string GenerateRandomName(Random random){
+  int nameLength = random.Next(3,12);
+  const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  return new string(Enumerable.Range(0,nameLength).Select(_=> chars[random.Next(chars.Length)]).ToArray());
+}
 }
