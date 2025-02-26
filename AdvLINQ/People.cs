@@ -18,4 +18,10 @@ private string GenerateRandomName(Random random){
   const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
   return new string(Enumerable.Range(0,nameLength).Select(_=> chars[random.Next(chars.Length)]).ToArray());
 }
+private DateTime GenerateRandomBirthday(Random random){
+  int year = random.Next(1930,2025);
+  int month = random.Next(1,13);
+  int day = random.Next(1,31);
+  return new DateTime(year, month,day);
+}
 }
