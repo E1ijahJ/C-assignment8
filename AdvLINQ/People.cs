@@ -34,5 +34,12 @@ private DateTime GenerateRandomBirthday(Random random){
 public Person[] GetPeopleBornAfter(DateTime date){
   return data.Where(p=> p.Birthday> date).ToArray();
 }
+public Person[] GetPeopleByName(string name){
+  return data.Where(p=> p.Name == name).ToArray();
+}
+public Person? GetPersonById(int id){
+  return data.FirstOrDefault(p=> p.Id==id);
+}
+
 
 }
