@@ -26,7 +26,8 @@ private string GenerateRandomName(Random random){
 private DateTime GenerateRandomBirthday(Random random){
   int year = random.Next(1930,2025);
   int month = random.Next(1,13);
-  int day = random.Next(1,31);
+  int maxiDay = DateTime.DaysInMonth(year,month);
+  int day = random.Next(1,maxiDay+1);
   return new DateTime(year, month,day);
 }
 
