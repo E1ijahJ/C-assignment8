@@ -2,7 +2,7 @@
 
 public class People
 {
-private class Person{
+public class Person{
   public int Id {get; set;}
   public string Name{ get; set;}
   public DateTime Birthday {get; set;}
@@ -29,4 +29,9 @@ private DateTime GenerateRandomBirthday(Random random){
   int day = random.Next(1,31);
   return new DateTime(year, month,day);
 }
+
+public Person[] GetPeopleBornAfter(DateTime date){
+  return data.Where(p=> p.Birthday> date).ToArray();
+}
+
 }
