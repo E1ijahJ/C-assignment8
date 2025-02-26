@@ -13,6 +13,11 @@ private class Person{
     Birthday=birthday;
   }
 }
+private Person[] data;
+public People(){
+  Random random = new Random();
+  data = Enumerable.Range(1,1000000).Select(id => new Person(id,GenerateRandomName(random),GenerateRandomBirthday(random))).ToArray();
+}
 private string GenerateRandomName(Random random){
   int nameLength = random.Next(3,12);
   const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
